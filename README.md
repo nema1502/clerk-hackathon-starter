@@ -67,6 +67,16 @@ Variables de entorno que usa la plantilla (ver `.env.example`):
 > que es lo que hace `pnpm dev` aquí.
 > `.env.local` y la carpeta `.clerk/` están en `.gitignore`: no se suben a GitHub.
 
+## Trabajo en equipo
+
+Usen **una sola app de Clerk por equipo**. Si cada laptop corre `pnpm dev` sin claves, cada una
+crea su propia app temporal y las cuentas no se comparten entre ustedes.
+
+1. Una persona corre `pnpm dev` (o crea la app en el Dashboard) y reclama la app con su cuenta.
+2. Comparte el contenido de `.env.local` con el equipo por un canal privado (nunca por GitHub
+   ni en un grupo público): la `CLERK_SECRET_KEY` da acceso a todos tus usuarios.
+3. El resto pega ese `.env.local` en su copia del repo antes de correr `pnpm dev`.
+
 ## Activar Google y GitHub
 
 1. En el Dashboard de Clerk, ve a **SSO connections**.
